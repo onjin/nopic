@@ -46,4 +46,3 @@ def fakeimg(width, height=None, background='cccccc', foreground='666666',
         foreground_alpha, text, font, size
     )
 
-app.run(debug=True)
