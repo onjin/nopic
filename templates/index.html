@@ -153,7 +153,7 @@
     </div>
     <div class="span5">
         <form class="well form-inline" id="generator">
-        <h3>Generate dynamic image url</h3><br/>
+            <h3>Generate dynamic image url (works with <a href="https://nopic.herokuapp.com">SSL</a>)</h3><br/>
         <p style="text-align:justify">
         </p>
 
@@ -191,7 +191,7 @@
         <script type="text/javascript">
         function generate()
         {
-            var url = 'http://nopic.herokuapp.com';
+            var url = '//nopic.herokuapp.com';
             $.each($('#generator').serializeArray(), function(i, field) {
                 if (i == 1) {
                     url += 'x' + field.value;
