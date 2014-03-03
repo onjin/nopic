@@ -164,7 +164,7 @@
                 <input type="text" name="background" size="6" id="appendedInputButton" class="span3" value="F5F3DC"/> /
                 <input type="text" name="foreground" size="6" id="appendedInputButton" class="span3" value="454445"/><br/><br/>
 
-                <select name="font">
+                <select name="font" class="font">
                     <option value="lobster">lobster</option>
                     <option value="inconsolata">inconsolata (pl)</option>
                     <option value="miso">miso</option>
@@ -214,6 +214,12 @@
         $('#generator').on('submit', function(form) {
                 generate();
                 return false;
+        });
+        $('#generator input').on('change', function() {
+            generate();
+        });
+        $('#generator select').on('change', function() {
+            generate();
         });
         generate();
         </script>
