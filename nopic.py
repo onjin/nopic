@@ -1,10 +1,14 @@
 from StringIO import StringIO
 
+from itsdangerous import URLSafeSerializer
+
 from PIL import Image, ImageFont, ImageDraw
 import flask
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for, redirect
 
 app = Flask(__name__, static_url_path='/media')
+
+SECRET = 'uxGBN0qXMtmezodt063PjTmI5SC0p241niYJMMzDe1PxMubsXj1bV1tKEA0twAUE'
 
 
 def get_image_response(width, height, background='cccccc',
@@ -38,6 +42,20 @@ def get_image_response(width, height, background='cccccc',
 @app.route('/')
 def home():
     return render_template("index.html")
+
+
+@app.route('/c/<path:url>')
+def create_short(url):
+    s = URLSafeSerializer(SECRET)
+    short = s.dumps(url)
+    return redirect('/s/' + short)
+
+
+@app.route('/s/<path:path>/')
+def open_short(path):
+    s = URLSafeSerializer(SECRET)
+    short = s.loads(path)
+    return redirect('/' + short)
 
 
 @app.route('/<int:width>/',)
