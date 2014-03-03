@@ -203,10 +203,12 @@
                     url += '&' + field.name + '=' + field.value;
                 }
             });
+            $('#generated img').toggle();
             $('#generated').attr('href', url);
             $('#generated img').attr('src', url);
-            console.log(url);
+            $('#generated img').toggle();
         }
+
         $('#generator').on('submit', function(form) {
                 generate();
                 return false;
