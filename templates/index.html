@@ -191,7 +191,11 @@
         <script type="text/javascript">
         function generate()
         {
-            var url = '//nopic.herokuapp.com';
+            if (window.location.protocol != "https:") {
+                var url = 'http://nopic.herokuapp.com';
+            } else {
+                var url = 'https://nopic.herokuapp.com';
+            }
             $.each($('#generator').serializeArray(), function(i, field) {
                 if (i == 1) {
                     url += 'x' + field.value;
