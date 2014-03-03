@@ -50,7 +50,8 @@ def fakeimg(width, height=None, background='cccccc', foreground='666666',
             background_alpha=0, foreground_alpha=0):
     if not height:
         height = width
-    text = request.args.get('text', "%s x %s" % (width, height)).encode('utf8')
+    text = request.args.get('text', u"%s x %s" % (width, height))
+
     size = int(request.args.get('size', 16))
     font = request.args.get('font', 'lobster')
 
