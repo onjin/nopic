@@ -26,11 +26,16 @@ def get_image_response(width, height, background='cccccc',
         fontname = 'lobster.otf'
         font = ImageFont.truetype("fonts/" + fontname, size)
 
-    w, h = font.getsize(text)
-    draw.text(
-        ((width - w) / 2, (height - h) / 2),
-        text, '#' + foreground, font=font
-    )
+    lines = text.split('\\n')
+    _, lines_height = font.getsize(lines[0])
+    text_height = (height - (len(lines) * lines_height)) / 2
+    for index, line in enumerate(lines):
+        w, h = font.getsize(line)
+        draw.text(
+            ((width - w) / 2, text_height),
+            line, '#' + foreground, font=font
+        )
+        text_height += lines_height
 
     img.save(buf, "PNG")
 
