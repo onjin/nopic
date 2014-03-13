@@ -118,8 +118,8 @@
     <div class="active item"><img src="/556x420/F5F3DC/454445/?text=400 or 400x200&size=24" style="width:100%"/>
     <div class="carousel-caption">
                 <h4>Simple sizes</h4>
-                  <p> * square image - <a href="http://nopic.herokuapp.com/300/" target="_blank">http://nopic.herokuapp.com/300/</a><br/>
-                  * different height - <a href="http://nopic.herokuapp.com/556x420/" target="_blank">http://nopic.herokuapp.com/556x420/</a></p>
+                  <p> * square image - <a href="/300/" target="_blank">/300/</a><br/>
+                  * different height - <a href="/556x420/" target="_blank">/556x420/</a></p>
                 </div>
     </div>
 
@@ -127,8 +127,8 @@
     <div class="carousel-caption">
                   <h4>Change colors</h4>
                   <p>
-                  * background - <a href="http://nopic.herokuapp.com/556x420/454445/" target="_blank">http://nopic.herokuapp.com/400x200/454445/</a><br/>
-                  * &amp; foreground - <a href="http://nopic.herokuapp.com/556x420/454445/F5F3DC/" target="_blank">http://nopic.herokuapp.com/400x200/454445/F5F3DC/</a>
+                  * background - <a href="/556x420/454445/" target="_blank">/400x200/454445/</a><br/>
+                  * &amp; foreground - <a href="/556x420/454445/F5F3DC/" target="_blank">/400x200/454445/F5F3DC/</a>
                 </div>
     </div>
 
@@ -136,7 +136,7 @@
     <div class="carousel-caption">
                   <h4>Change text and size</h4>
                   <p>
-                  * custom text and font size - <a href="http://nopic.herokuapp.com/556x420/F5F3DC/454445/?text=Custom text&size=28" target="_blank">http://nopic.herokuapp.com/400x200/F5F3DC/454445/?text=Custom text&size=28</a><br/>
+                  * custom text and font size - <a href="/556x420/F5F3DC/454445/?text=Custom text&size=28" target="_blank">/400x200/F5F3DC/454445/?text=Custom text&size=28</a><br/>
                   * use <strong>\n</strong> to seperate lines
                 </div>
     </div>
@@ -190,11 +190,7 @@
         <script type="text/javascript">
         function generate()
         {
-            if (window.location.protocol == "http:") {
-                var url = 'http://nopic.herokuapp.com';
-            } else {
-                var url = 'https://nopic.herokuapp.com';
-            }
+            var url = '';
             $.each($('#generator').serializeArray(), function(i, field) {
                 if (i == 1) {
                     url += 'x' + field.value;
@@ -232,7 +228,7 @@
     <center>
     <img src="/350x150/?font=inconsolata&size=24&text=Inconsolata font">
     <br/><br/>
-    <a class="btn" style="width:285px;" href="http://nopic.herokuapp.com/350x150?font=inconsolata&size=24&text=Inconsolata" target="_blank">Simple <strong>inconsolata</strong> font</a>
+    <a class="btn" style="width:285px;" href="/350x150?font=inconsolata&size=24&text=Inconsolata" target="_blank">Simple <strong>inconsolata</strong> font</a>
     </center>
     </div>
 
@@ -240,7 +236,7 @@
     <center>
     <img src="/350x150/?font=miso-bold&size=24&text=Miso bold font">
     <br/><br/>
-    <a class="btn" style="width:285px;" href="http://nopic.herokuapp.com/350x150?font=miso-bold&size=24&text=Miso bold" target="_blank">Awesome <strong>miso-bold</strong> font</a>
+    <a class="btn" style="width:285px;" href="/350x150?font=miso-bold&size=24&text=Miso bold" target="_blank">Awesome <strong>miso-bold</strong> font</a>
     </center>
     </div>
 
@@ -248,7 +244,7 @@
     <center>
     <img src="/350x150/?font=lobster&size=24&text=Default lobster font">
     <br/><br/>
-    <a class="btn" style="width:285px;" href="http://nopic.herokuapp.com/350x150?font=lobster" target="_blank">Default <strong>lobster</strong> font</a>
+    <a class="btn" style="width:285px;" href="/350x150?font=lobster" target="_blank">Default <strong>lobster</strong> font</a>
     </center>
     </div>
 
