@@ -8,7 +8,7 @@ from flask import Flask, request, render_template, url_for, redirect
 
 app = Flask(__name__, static_url_path='/media')
 
-SECRET = 'uxGBN0qXMtmezodt063PjTmI5SC0p241niYJMMzDe1PxMubsXj1bV1tKEA0twAUE'
+SECRET = 'changeme'
 
 
 def get_image_response(width, height, background='cccccc',
