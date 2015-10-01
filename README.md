@@ -1,6 +1,8 @@
 Simple online images generator
 ------------------------------
 
+License: **MIT**
+
 Works with **python 2.7**
 
 Installation:
