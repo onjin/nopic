@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+import os
 from io import BytesIO
-from typing import List
+from typing import List, Optional
 
 import flask
 from flask import Flask, redirect, render_template, request
@@ -13,18 +14,26 @@ app = Flask(__name__, static_url_path="/media")
 SECRET = "changeme"
 
 
+def try_fonts(name:str, extensions: List[str], default: Optional[str] = None):
+    for ext in extensions:
+        path = os.path.join('fonts', f'{name}.{ext}')
+        if os.path.exists(path):
+            return path
+    return default
+
+
 def get_image_response(width, height, background="cccccc", foreground="666666", text=None, font=None, size=16):
     buf = BytesIO()
     img = Image.new("RGB", (width, height), "#" + background)
 
     # font
     draw = ImageDraw.Draw(img)
-    fontname = font + ".otf"
+
+    fontfile = try_fonts(font, ['ttf','otf'], default='lobster.ttf')
     try:
-        font = ImageFont.truetype("fonts/" + fontname, size)
+        font = ImageFont.truetype(fontfile, size)
     except IOError:
-        fontname = "lobster.otf"
-        font = ImageFont.truetype("fonts/" + fontname, size)
+        font = ImageFont.truetype("fonts/lobster.ttf", size)
 
     lines: List[str] = text.split("\\n")
     _, lines_height = font.getsize(lines[0])
